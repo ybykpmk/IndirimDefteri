@@ -1,0 +1,46 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    ÜRÜN GÝRÝÞ UYGULAMASI
+                </h1>
+            </div>
+            <div class="loginDisplay"> <asp:Label ID="lblgunlukerisim" runat="server" Text=""></asp:Label><br />
+            <asp:Label ID="lblOnlineUser" runat="server" Text=""></asp:Label>    &nbsp;&nbsp;
+             <asp:Label ID="Lbl_kullanici" runat="server"></asp:Label> &nbsp;&nbsp;
+                        [ <asp:Label ID="lbl_oturum" runat="server"><a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Oturum Aç</a></asp:Label> ]
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Applctn/Urun_Kayit.aspx" Text="Ürün Kayýt"/>
+                        <asp:MenuItem NavigateUrl="~/Applctn/Urun_Guncelle.aspx" Text="Ürün Güncelleme&Silme"/>
+                        <asp:MenuItem NavigateUrl="~/Applctn/Kategori_Kayit.aspx" Text="Kategori/Alt Kategori Kayýt"/>
+                        <asp:MenuItem NavigateUrl="~/Applctn/Log_Izle.aspx" Text="Log Ýzleme"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">        
+    </div>
+    </form>
+</body>
+</html>
